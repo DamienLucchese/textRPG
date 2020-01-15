@@ -1,0 +1,134 @@
+html{
+  background: #000;
+}
+
+body{
+  text-align: center;
+}
+
+body div {
+  box-sizing: border-box;
+}
+
+.gameSpace{
+  width: 100%;
+  margin: 20px 0;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+.gameBox{
+  position: relative;
+  display: inline-block;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 0 auto;
+}
+
+.playerStats{
+  background: #707070;
+  width: 30%;
+  height: 250px;
+  display: inline-block;
+  position: relative;
+  float: left;
+  padding: 20px 10px;
+}
+
+.playerStats p{
+  text-align: left;
+}
+
+.playerStats .playerHealthGauge{
+  color: #b51010;
+  background: #000000;
+  padding: 2px 0 2px 4px;
+}
+
+.playerStats #playerHealth{
+  color: #b51010;
+  /*background: #b51010;*/
+}
+
+.playerStats .playerAttackGauge{
+  color: #919109;
+  background: #000000;
+  padding: 2px 0 2px 4px;
+}
+
+.playerStats #playerAttack{
+  color: #919109;
+  /*background: #919109;*/
+}
+
+.playerStats .playerDefenseGauge{
+  color: #092991;
+  background: #000000;
+  padding: 2px 0 2px 4px;
+}
+
+.playerStats #playerDefense{
+  color: #092991;
+  /*background: #092991;*/
+}
+
+.playerStats .playerMagicGauge{
+  color: #580991;
+  background: #000000;
+  padding: 2px 0 2px 4px;
+}
+
+.playerStats #playerMagic{
+  color: #580991;
+  /*background: #580991;*/
+}
+
+#gameBG{
+  background: #275427;
+  display: inline-block;
+  position: relative;
+  width: 68%;
+  height: 250px;
+  float: left;
+  padding: 40px 20px;
+}
+
+#gameBG.forest{
+  background: #275427;
+}
+
+#gameBG.desert{
+  background: #275427;
+}
+
+#gameBG.town{
+  background: #275427;
+}
+
+#gameBG.jungle{
+  background: #275427;
+}
+
+#gameBG.city{
+  background: #275427;
+}
+
+#gameBG.boat{
+  background: #275427;
+}
+
+#statusText{
+  color: #fff;
+  font-size: 20px;
+}
+
+.actionButton{
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.hidden{
+  display: none;
+}

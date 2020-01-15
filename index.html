@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/textRPG.css">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <div class="gameSpace">
+      <div class="gameBox">
+        <div class="playerStats">
+          <p class="playerHealthGauge">Health: |
+            <span id="playerHealth">&#9829; &#9829;</span>
+            <span id="playerHealthEmpty">&#9825;</span>
+            <span id="playerHealthEmptyGauge">-----------------</span>
+          |</p>
+          <p class="playerAttackGauge">Attack: |
+            <span id="playerAttack">&#9876;</span>
+            <span id="playerAttackEmpty"></span>
+            <span id="playerAttackEmptyGauge">--------</span>
+          |</p>
+          <p class="playerDefenseGauge">Defense: |
+            <span id="playerDefense">&#9960;</span>
+            <span id="playerDefenseEmpty"></span>
+            <span id="playerDefenseEmptyGauge">---------</span>
+          |</p>
+          <p class="playerMagicGauge">Magic: |
+            <span id="playerMagic">&#9733;</span>
+            <span id="playerMagicEmpty">&#9734;</span>
+            <span id="playerMagicEmptyGauge">--------</span>
+          |</p>
+        </div>
+        <div id="gameBG">
+          <p id="statusText">Welcome! Press "ONWARD" to begin your journey.</p>
+          
+          <button class="actionButton" id="onwardButton" onclick="generateStatus()">ONWARD</button>
+          
+          <button class="actionButton hidden" id="fleeButton" onclick="flee()">FLEE</button>
+          
+          <button class="actionButton hidden" id="attackButton" onclick="fight()">ATTACK</button>
+          
+          <button class="actionButton hidden" id="ignoreButton" onclick="ignore()">IGNORE</button>
+          
+          <button class="actionButton hidden" id="talkButton" onclick="talk()">TALK</button>
+          
+          <button class="actionButton hidden" id="panicButton" onclick="panic()">PANIC</button>
+          
+          <button class="actionButton hidden" id="takeCoverButton" onclick="takeCover()">TAKE COVER</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/textRPG.js" async defer></script>
+  </body>
+</html>
