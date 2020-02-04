@@ -58,7 +58,8 @@ var ignoreButton = document.getElementById("ignoreButton");
 var talkButton = document.getElementById("talkButton");
 var panicButton = document.getElementById("panicButton");
 var takeCoverButton = document.getElementById("takeCoverButton");
-var actionButtons = [onwardButton, fleeButton, attackButton, ignoreButton, talkButton, panicButton, takeCoverButton];
+var restartButton = document.getElementById("restartButton");
+var actionButtons = [onwardButton, fleeButton, attackButton, ignoreButton, talkButton, panicButton, takeCoverButton, restartButton];
 // /buttons
 
 var message;
@@ -75,8 +76,18 @@ function updateStatus(newStatus){
   statusText.innerHTML = newStatus;
 }
 
+function vitalityCheck(){
+  return playerHealth >=1 ? true : false;
+}
+
 function resolve(message){
-  updateStatus(message);
+  if (vitalityCheck() == true){
+    updateStatus(message);
+  } else {
+    actionButtons.forEach(hideActionButtons);
+    updateStatus('Your life flashes before you and the heavens open. Seems this is where your journey ends.');
+    toggleDisplay(restartButton);
+  }
 }
 
 function generate(genArray){
@@ -251,7 +262,6 @@ function whichEncounter(encounter, encountered){
 
 function addClassTo(classToAdd, addTo){
   addTo.className = classToAdd;
-  
 }
 
 function generateStatus(){
