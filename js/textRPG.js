@@ -75,8 +75,16 @@ function updateStatus(newStatus){
   statusText.innerHTML = newStatus;
 }
 
+function vitalityCheck(){
+  return playerHealth >=1 ? true : false;
+}
+
 function resolve(message){
-  updateStatus(message);
+  if (vitalityCheck() == true){
+    updateStatus(message);
+  } else {
+    updateStatus('Your life flashes before you and the heavens open. Seems this is where your journey ends.');
+  }
 }
 
 function generate(genArray){
@@ -251,7 +259,6 @@ function whichEncounter(encounter, encountered){
 
 function addClassTo(classToAdd, addTo){
   addTo.className = classToAdd;
-  
 }
 
 function generateStatus(){
