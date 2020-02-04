@@ -58,7 +58,8 @@ var ignoreButton = document.getElementById("ignoreButton");
 var talkButton = document.getElementById("talkButton");
 var panicButton = document.getElementById("panicButton");
 var takeCoverButton = document.getElementById("takeCoverButton");
-var actionButtons = [onwardButton, fleeButton, attackButton, ignoreButton, talkButton, panicButton, takeCoverButton];
+var restartButton = document.getElementById("restartButton");
+var actionButtons = [onwardButton, fleeButton, attackButton, ignoreButton, talkButton, panicButton, takeCoverButton, restartButton];
 // /buttons
 
 var message;
@@ -83,7 +84,9 @@ function resolve(message){
   if (vitalityCheck() == true){
     updateStatus(message);
   } else {
+    actionButtons.forEach(hideActionButtons);
     updateStatus('Your life flashes before you and the heavens open. Seems this is where your journey ends.');
+    toggleDisplay(restartButton);
   }
 }
 
