@@ -9,6 +9,10 @@ var needies = ["beggar", "old witch", "lost orphan", "wounded animal", "drunk ba
 var mythicals = ["Unicorn", "Silver Dragon", "Merlin", "Great Fairy Queen", "Druid King", "Majestic Gryphon"];
 var hazards = ["large patch of quicksand", "furious tornado", "towering tidal wave", "powerful earthquake", "unrelenting hail storm", "quickly spreading fire"];
 
+//for future use
+// var ignoreHostileReactions = [];
+// var ignorePassiveReactions = [];
+
 var gamePhase = "initial";
 //potential gamePhases = ["initial", "action", "evaluate", "result", "end"];
 
@@ -63,6 +67,7 @@ var actionButtons = [onwardButton, fleeButton, attackButton, ignoreButton, talkB
 // /buttons
 
 var message;
+var currentEncounter;
 
 var dice = {
   sides: 6,
@@ -217,11 +222,15 @@ function flee(){
 }
 
 function ignore(){
-  console.log("Ignored");
+  actionButtons.forEach(hideActionButtons);
+  updateStatus('You are rude. You move along.');
+  toggleDisplay(onwardButton);
 }
 
 function talk(){
-  console.log("Talk");
+  actionButtons.forEach(hideActionButtons);
+  updateStatus('You had hoped for some useful information but this buffoon just continues to yammer on about trivial gossip.');
+  toggleDisplay(onwardButton);
 }
 
 function whichEncounter(encounter, encountered){
@@ -273,6 +282,8 @@ function generateStatus(){
   var encountered = generate(this[encounter]);
   
   var flavorText = whichEncounter(encounter, encountered);
+
+  currentEncounter = encountered;
   
   updateStatus(where + '<br/>' + flavorText);
 }
